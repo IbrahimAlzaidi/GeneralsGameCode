@@ -3,7 +3,7 @@
 !.editorconfig
 !.gitignore
 !.gitattributes
-!.github
+
 !.gitmodules
 
 *.user
@@ -68,3 +68,4 @@ build.ninja
 __pycache__/
 *.pyc
 Docs/
+openspec/

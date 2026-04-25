@@ -845,6 +845,16 @@ set(GAMEENGINE_SRC
 #    Source/GameLogic/AI/AIGuard.cpp
 #    Source/GameLogic/AI/AIGuardRetaliate.cpp
     Source/GameLogic/AI/AIPathfind.cpp
+    Source/GameLogic/AI/AIPathfindPathData.cpp
+    Source/GameLogic/AI/AIPathfindCellSupport.cpp
+    Source/GameLogic/AI/AIPathfindCell.cpp
+    Source/GameLogic/AI/AIPathfindZone.cpp
+    Source/GameLogic/AI/AIPathfindMap.cpp
+    Source/GameLogic/AI/AIPathfindQueue.cpp
+    Source/GameLogic/AI/AIPathfindAdjust.cpp
+    Source/GameLogic/AI/AIPathfindSearch.cpp
+    Source/GameLogic/AI/AIPathfindQuery.cpp
+    Source/GameLogic/AI/AIPathfindXfer.cpp
 #    Source/GameLogic/AI/AIPlayer.cpp
 #    Source/GameLogic/AI/AISkirmishPlayer.cpp
 #    Source/GameLogic/AI/AIStates.cpp
@@ -1205,4 +1215,8 @@ target_link_libraries(corei_gameengine_public INTERFACE
 # ReactOS ATL for MinGW-w64 only (MSVC uses native ATL)
 if(MINGW)
     target_link_libraries(corei_gameengine_public INTERFACE reactos_atl)
+endif()
+
+if(BUILD_TESTING)
+    add_subdirectory(Tests)
 endif()

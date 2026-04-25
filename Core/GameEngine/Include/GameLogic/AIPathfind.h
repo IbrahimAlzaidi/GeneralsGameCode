@@ -390,8 +390,8 @@ public:
 	void clearObstruction() { m_type = CELL_CLEAR; m_obstacleID = INVALID_ID; m_obstacleIsFence = false; m_obstacleIsTransparent = false; }
 #endif
 
-	inline Bool isObstacleTransparent() const;
-	inline Bool isObstacleFence() const;
+	Bool isObstacleTransparent() const;
+	Bool isObstacleFence() const;
 
 	/// Return estimated cost from given cell to reach goal cell
 	UnsignedInt costToGoal( PathfindCell *goal );
@@ -435,8 +435,8 @@ public:
 	inline UnsignedShort getXIndex() const {return m_info->m_pos.x;}
 	inline UnsignedShort getYIndex() const {return m_info->m_pos.y;}
 
-	inline Bool isBlockedByAlly() const;
-	inline void setBlockedByAlly(Bool blocked);
+	Bool isBlockedByAlly() const;
+	void setBlockedByAlly(Bool blocked);
 
 	inline Bool getOpen() const {return m_info->m_open;}
 	inline Bool getClosed() const {return m_info->m_closed;}
@@ -444,7 +444,7 @@ public:
 	inline UnsignedInt getTotalCost() const {return m_info->m_totalCost;}
 	inline UnsignedInt getOpenInsertOrder() const { return m_info ? m_info->m_openInsertOrder : 0; }
 
-	inline UnsignedInt getTotalCostDifference(PathfindCell& other) const;
+	UnsignedInt getTotalCostDifference(PathfindCell& other) const;
 
 	inline void setCostSoFar(UnsignedInt cost) { if( m_info ) m_info->m_costSoFar = cost;}
 	inline void setTotalCost(UnsignedInt cost) { if( m_info ) m_info->m_totalCost = cost;}
@@ -470,7 +470,7 @@ public:
 	inline ObjectID getGoalAircraft() const {ObjectID id = m_info?m_info->m_goalAircraftID:INVALID_ID; return id;}
 	inline ObjectID getPosUnit() const {ObjectID id = m_info?m_info->m_posUnitID:INVALID_ID; return id;}
 
-	inline ObjectID getObstacleID() const;
+	ObjectID getObstacleID() const;
 
 	void setLayer( PathfindLayerEnum layer ) { m_layer = layer; }	///< set the cell layer
 	PathfindLayerEnum getLayer() const { return (PathfindLayerEnum)m_layer; }				///< get the cell layer
